@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     const checkHealth = async () => {
       try {
-        const res = await axios.get("https://brochat-2cqd.onrender.com/health");
+        const res = await axios.get("https://brochat-f.onrender.com/health");
         setServerStatus(res.data.message || "Server is healthy");
       } catch (err) {
         console.error("Health check failed:", err);
@@ -43,7 +43,7 @@ const App = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("https://brochat-2cqd.onrender.com/chat", { query: question });
+      const res = await axios.post("https://brochat-f.onrender.com/chat", { query: question });
       const botMessage = { sender: "bot", text: res.data.answer || "Sorry, no response." };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
